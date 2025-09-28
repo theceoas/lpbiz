@@ -269,14 +269,22 @@ export function BookingCalendar({ onClose, formData }: BookingCalendarProps) {
 
         {/* Calendar Embed */}
         <div className="bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden">
-          <div className="h-[600px] sm:h-[700px] lg:h-[800px] overflow-auto">
+          <div className="h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] w-full">
             <Cal 
               namespace="bizpilot-call" 
               calLink="abdu.manacq/bizpilot-call"
-              style={{ width: "100%", height: "100%", minHeight: "800px" }}
+              style={{ 
+                width: "100%", 
+                height: "100%", 
+                minHeight: "500px",
+                border: "none"
+              }}
               config={{
                 layout: "month_view",
-                theme: "light"
+                theme: "light",
+                branding: {
+                  brandColor: "#2563eb"
+                }
               }}
             />
           </div>

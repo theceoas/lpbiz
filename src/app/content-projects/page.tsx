@@ -179,7 +179,7 @@ export default function ContentProjectsPage() {
                     <div className="grid grid-cols-2 gap-0">
                       {/* Before */}
                       <div className="relative group/before">
-                        <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
+                        <div className="aspect-[9/16] bg-gray-100 relative overflow-hidden">
                           {project.before_image_url ? (
                             <img 
                               src={project.before_image_url} 
@@ -210,7 +210,7 @@ export default function ContentProjectsPage() {
                         <MediaDisplay
                           media={project.after_media || []}
                           fallbackUrl={project.after_image_url}
-                          className="aspect-[4/3] bg-gradient-to-br from-purple-100 to-indigo-200"
+                          className="aspect-[9/16] bg-gradient-to-br from-purple-100 to-indigo-200"
                           showControls={false}
                           autoPlay={false}
                         />
@@ -269,7 +269,7 @@ export default function ContentProjectsPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <h3 className="font-semibold text-gray-900">Before</h3>
-                  <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden rounded-lg">
+                  <div className="aspect-[9/16] bg-gray-100 relative overflow-hidden rounded-lg">
                     {selectedProject.before_image_url ? (
                       <img 
                         src={selectedProject.before_image_url} 
@@ -297,7 +297,7 @@ export default function ContentProjectsPage() {
                   <MediaDisplay
                     media={selectedProject.after_media || []}
                     fallbackUrl={selectedProject.after_image_url}
-                    className="aspect-[4/3] bg-gradient-to-br from-purple-100 to-indigo-200 rounded-lg"
+                    className="aspect-[9/16] bg-gradient-to-br from-purple-100 to-indigo-200 rounded-lg"
                     showControls={true}
                     autoPlay={false}
                   />

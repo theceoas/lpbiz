@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { ContentProject, AfterMedia } from '@/lib/supabase'
-import { getContentProjects, updateContentProject, createContentProject, deleteContentProject } from '@/lib/content-projects'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -60,7 +59,11 @@ export function ContentProjectsManager({ onClose }: ContentProjectsManagerProps)
   const loadProjects = async () => {
     try {
       setLoading(true)
-      const data = await getContentProjects()
+      const response = await fetch('/api/content-projects')
+      if (!response.ok) {
+        throw new Error('Failed to fetch content projects')
+      }
+      const data = await response.json()
       setProjects(data || [])
     } catch (error) {
       console.error('Error loading projects:', error)
@@ -116,10 +119,28 @@ export function ContentProjectsManager({ onClose }: ContentProjectsManagerProps)
         after_media: afterMedia
       }
 
+      let response
       if (editingProject) {
-        await updateContentProject(editingProject.id, projectData)
+        response = await fetch('/api/content-projects', {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ id: editingProject.id, ...projectData }),
+        })
       } else {
-        await createContentProject(projectData)
+        response = await fetch('/api/content-projects', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(projectData),
+        })
+      }
+
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.error || 'Failed to save content project')
       }
 
       setIsDialogOpen(false)
@@ -132,7 +153,19 @@ export function ContentProjectsManager({ onClose }: ContentProjectsManagerProps)
   const handleDelete = async (id: string) => {
     if (confirm('Are you sure you want to delete this project?')) {
       try {
-        await deleteContentProject(id)
+        const response = await fetch('/api/content-projects', {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ id }),
+        })
+
+        if (!response.ok) {
+          const errorData = await response.json()
+          throw new Error(errorData.error || 'Failed to delete content project')
+        }
+
         loadProjects()
       } catch (error) {
         console.error('Error deleting project:', error)
@@ -142,9 +175,22 @@ export function ContentProjectsManager({ onClose }: ContentProjectsManagerProps)
 
   const toggleFeatured = async (project: ContentProject) => {
     try {
-      await updateContentProject(project.id, {
-        is_featured: !project.is_featured
+      const response = await fetch('/api/content-projects', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          id: project.id, 
+          is_featured: !project.is_featured 
+        }),
       })
+
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.error || 'Failed to update featured status')
+      }
+
       loadProjects()
     } catch (error) {
       console.error('Error updating featured status:', error)

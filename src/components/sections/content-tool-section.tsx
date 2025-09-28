@@ -63,7 +63,7 @@ export function ContentToolSection() {
                   <div className="h-4 bg-gray-200 rounded w-full"></div>
                 </CardHeader>
                 <CardContent className="p-0">
-                  <div className="aspect-[4/3] bg-gray-200"></div>
+                  <div className="aspect-[9/16] bg-gray-200"></div>
                 </CardContent>
               </Card>
             ))}
@@ -102,7 +102,7 @@ export function ContentToolSection() {
                   <div className="grid grid-cols-2 gap-0">
                     {/* Before */}
                     <div className="relative group/before">
-                      <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
+                      <div className="aspect-[9/16] bg-gray-100 relative overflow-hidden">
                         {project.before_image_url ? (
                           <img 
                             src={project.before_image_url} 
@@ -133,7 +133,7 @@ export function ContentToolSection() {
                       <MediaDisplay
                         media={project.after_media || []}
                         fallbackUrl={project.after_image_url}
-                        className="aspect-[4/3] bg-gradient-to-br from-purple-100 to-indigo-200"
+                        className="aspect-[9/16] bg-gradient-to-br from-purple-100 to-indigo-200"
                         showControls={false}
                         autoPlay={false}
                       />

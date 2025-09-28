@@ -269,15 +269,16 @@ export function BookingCalendar({ onClose, formData }: BookingCalendarProps) {
 
         {/* Calendar Embed */}
         <div className="bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden">
-          <div className="h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] w-full">
+          <div className="h-[70vh] sm:h-[600px] md:h-[700px] lg:h-[800px] w-full overflow-auto overscroll-contain touch-pan-y" style={{ WebkitOverflowScrolling: 'touch' }}>
             <Cal 
               namespace="bizpilot-call" 
               calLink="abdu.manacq/bizpilot-call"
               style={{ 
                 width: "100%", 
                 height: "100%", 
-                minHeight: "500px",
-                border: "none"
+                minHeight: "70vh",
+                border: "none",
+                overflow: "auto"
               }}
               config={{
                 layout: "month_view",

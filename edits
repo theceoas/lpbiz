@@ -1,0 +1,226 @@
+1) hero (replace your current top)
+
+Component ID: hero
+
+H1:
+Your Full-Time AI Business Team — For a One-Time Fee
+
+Subhead (2 lines):
+Get a complete digital team that runs your online business 24/7.
+Content, sales, support, and growth — all handled for you, forever.
+
+Primary CTA button: Apply for Your AI System
+Secondary CTA button (ghost): See a 60-Second Demo
+
+Badges (inline):
+
+10-Day Launch Guarantee
+
+No Monthly Fees
+
+Works with WhatsApp, Instagram & Web
+
+Micro-trust (small text under CTAs):
+No subscriptions. You only top-up low usage credits as you grow — like airtime.
+
+2) your ai team (rename “The Three Pillars” → “Meet Your AI Team” and move above problems)
+
+Component ID: ai-team
+
+Section Title: Meet Your AI Team
+
+Use 3 equal cards (roles), each with a title, 1-line function, and 3 bullets.
+
+Card 1 — The Content Creator
+
+Function line: Produces ready-to-post content and product shots on autopilot.
+
+Bullets:
+
+Turn raw photos into pro-grade images & ads
+
+Consistent posting system (templates + captions)
+
+Saves hours and designer costs
+
+Card 2 — The Sales Manager
+
+Function line: Handles checkout, orders, and payments 24/7 — web + chat.
+
+Bullets:
+
+Smart shopping website or AI checkout via WhatsApp/IG
+
+Instant payment confirmation & order tracking
+
+Zero missed orders, smoother conversions
+
+Card 3 — The Support Team
+
+Function line: Replies instantly, answers FAQs, and keeps customers updated.
+
+Bullets:
+
+24/7 customer replies without you
+
+Returns, delivery, and status updates handled
+
+Frees you to focus on growth
+
+Small caption under the 3 cards:
+Together, these roles replace multiple hires — without salaries or management.
+
+3) outcomes (rewrite “Before vs After” to feel like a full team shift)
+
+Component ID: outcomes
+
+Section Title: What Changes When an AI Team Runs Your Business
+
+Before (Manual Chaos)	After (AI Team Running It)
+Inconsistent content; posting takes hours or hiring designers	Content auto-created & ready to post daily
+Manual checkout & payment confirmations	Smooth checkout + instant confirmations
+Customer replies depend on your time	24/7 instant replies and updates
+Growth requires hiring more staff	Scale without salaries or management overhead
+
+CTA (small, right-aligned): Watch the 60-Second Demo
+
+4) proof (demo + testimonials)
+
+Component ID: proof
+
+Section Title: See It Working in Real Life
+
+Left column (video):
+
+Block Title: 60-Second Demo
+
+Caption: From message → checkout → confirmation → tracking — all without you.
+
+Button: Try the Live Demo Agent
+
+Right column (testimonials gallery):
+
+Block Title: What Sellers Are Saying
+
+Cards (3–6 real ones): name, handle/business, 1–2 sentence result.
+
+Example placeholder copy (replace with real):
+
+“We stopped chasing DMs. Orders doubled in 3 weeks and I didn’t hire anyone.” — Ada, Fashion Seller
+
+“The website + chat checkout paid for itself in the first month.” — Musa, Home Goods
+
+“Content now posts daily while I’m at work. Zero stress.” — Fola, Skincare
+
+Trust strip (logos or line): Works for boutiques, home goods, skincare, apparel, and more.
+
+5) how it works (3 steps)
+
+Component ID: how-it-works
+
+Section Title: Launch in 10 Days — Here’s the Plan
+
+Step 1 — Diagnose & Plan
+We map your products, sales flow, and content needs — then design your AI team.
+
+Step 2 — Build & Train
+We set up your website/checkout, connect WhatsApp/IG, and train the AI on your brand.
+
+Step 3 — Go Live & Optimize
+You approve. We launch. Your AI team runs 24/7 — with performance tweaks in week 2.
+
+Inline reassurance: Zero tech stress — we do it for you.
+
+6)  guarantee (keep simple, de-emphasize subscriptions)
+
+Component ID: guarantee
+
+Section Title: One-Time Setup, Lifetime System
+
+
+What’s included (bulleted):
+
+AI Content Creator, Sales Manager, and Support Team — fully configured
+
+Smart shopping website or AI chat checkout (or both)
+
+Payment & order tracking automations
+
+Brand training + templates for content
+
+10-Day Launch Guarantee
+
+Handover + quick-start training
+
+Small note: No monthly fees. You only top-up low usage credits as needed (like airtime).
+
+Guarantee box (distinct card):
+No-Stress Guarantee — If it’s not delivered as promised or underperforms vs. your onboarding plan, we refund you in full. No delays, no excuses.
+
+CTA: Apply for Your AI System
+
+7) limited slots (urgency block)
+
+Component ID: slots
+
+Section Title: Limited Onboarding Slots Each Month
+
+Body:
+We only deploy a few systems monthly to guarantee quality.
+Slots remaining this month: <span id="slots-remaining">3</span>
+
+CTA (accent): Secure Your Slot Now
+
+(Optional) tiny logic your builder can implement:
+
+// pseudo
+const TOTAL_SLOTS = 3;
+const slotsRemaining = Math.max(0, TOTAL_SLOTS - window.__claimedSlots || 0);
+document.getElementById('slots-remaining').textContent = slotsRemaining;
+
+
+(Even static “3” works — just keep it believable.)
+
+8) faq (broaden beyond “messages”)
+
+Component ID: faq
+
+Do I have to use Instagram/WhatsApp?
+No. We can run your AI checkout on your website only, or combine web + chat.
+
+What if I only need a website and content?
+Perfect. Your AI team still includes The Content Creator and The Sales Manager. Support can be added anytime.
+
+Is this a subscription?
+No monthly fees. It’s a one-time build. You’ll only top-up low usage credits as you grow — like airtime.
+
+How fast can we launch?
+In 10 days. That includes setup, training, and go-live.
+
+What if it doesn’t work for my business?
+You’re covered by our No-Stress Guarantee — full refund if it’s not delivered as outlined in onboarding.
+
+What do you need from me?
+Product info, brand basics (logo/colors), and any existing content. We do the rest.
+
+9) final cta (footer block)
+
+Component ID: final-cta
+
+Headline: Ready to Replace Multiple Hires with One AI Team?
+
+Sub: One-time setup. 24/7 operations. No salaries.
+CTA: Apply for Your AI System
+Secondary CTA: See the 60-Second Demo
+
+on-page micro tweaks (important)
+
+Rename nav: Home · AI Team · Demo · Pricing · FAQ · Apply
+
+Change all “DMs/messages” heavy lines to broader outcomes (content, sales, support).
+
+Keep “Works with WhatsApp, Instagram & Web” as a badge, not the headline.
+
+Add a “Try Live” button near hero & proof sections linking to your demo agent.
+
+Track events: cta_apply_clicked, demo_played, demo_agent_opened, faq_opened, slots_cta_clicked.
